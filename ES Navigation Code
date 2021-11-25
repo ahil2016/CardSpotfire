@@ -1,0 +1,517 @@
+<style>
+.sfc-style-root .sf-element-panel-area{
+z-index: 1;
+}
+.sfc-style-root .sf-element-scroll-bar {
+
+display:none !important;
+}
+
+	.main-title-wrapper {
+		display: flex;
+		position: fixed;
+		top: 30px;
+		left: 0px;
+		width: 100%;
+		z-index: 1;
+		background-color:#fff;
+		border-bottom: 1px solid #ddd;
+		padding: 8px 32px;
+	}
+	
+	
+
+	.main-title-wrapper .logo {
+		height: 35px;
+	}
+
+	.main-title-wrapper .title {
+		margin-left: auto;
+		margin-right: auto;
+		//text-transform: uppercase;
+		
+	}
+
+	.main-title-wrapper .info {
+		margin-right: 50px;
+	}
+
+	.info svg {
+
+		cursor: pointer;
+
+	}
+
+	.main-title-wrapper .title h1 {
+		margin: 0px;
+
+	}
+
+	.main-title-wrapper .logo img {
+		height: 80%;
+		width: auto;
+	}
+
+	.navlist {
+		background-color: #fff;
+		margin: 0px;
+		display: flex;
+		justify-content: center;
+		padding: 8px 0px;
+		position: fixed;
+		top: 82px;
+		left: 0px;
+		z-index: 1;
+		width: 100%;
+
+	}
+
+	.navlist li {
+		margin: 0px;
+		list-style-type: none;
+		// margin-right: 24px;
+		position: relative;
+	}
+
+	.navlist li a {
+		margin: 0px;
+		color: #707070 !important;
+
+	}
+
+	.navlist li a:hover {
+		color: #707070 !important;
+		text-decoration: none;
+		//border-bottom: 2px solid #0097d1;
+
+	}
+
+	.menu-arrow {
+		fill: #707070;
+		margin-left: 4px;
+		transform: rotate(270deg);
+		transition: transform .45s ease 0s;
+	}
+
+	.navlist li:hover .menu-arrow {
+		fill: #707070;
+		transform: rotate(90deg);
+	}
+
+	.listitem {
+		border-left: 1px solid #707070;
+		padding: 2px 10px;
+	}
+
+	.listitem:last-child {
+		border-right: 1px solid #707070;
+	}
+
+	.dropdown-links {
+		max-height: 0px;
+		position: absolute;
+		top: 29px;
+		left: 0px;
+		z-index: 9999;
+		overflow: hidden;
+		transition: max-height .45s ease 0s;
+		box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.navlist li:hover .dropdown-links {
+		max-height: 1000px;
+	}
+
+	.dropdown-links ul {
+		padding: 16px;
+		background: #fff;
+		min-width: 255px;
+		padding: 0px;
+
+	}
+
+	.dropdown-links ul li  {
+		
+		color: #707070 !important;
+		cursor: pointer;
+		//padding: 8px 16px;
+	}
+	.dropdown-links ul li a{
+		//width: 100%;
+		display: inline-block;
+		padding: 8px 16px;
+	}
+	
+
+
+	.dropdown-links ul li:hover {
+		background-color: #ddd;
+		color: #fff !important;
+	}
+
+	.navlink {
+
+		text-transform: uppercase;
+	}
+
+	.model-wraper {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+		background: rgba(0, 0, 0, 0.4);
+		z-index: 1000;
+		text-align: center;
+		display: none;
+	}
+
+	.model-wraper.show-modal {
+		display: block;
+	}
+
+	.model-wraper .content {
+		background-color: #fff;
+		display: inline-block;
+		margin-top: 10%;
+		width: 500px;
+		//min-height: 250px;
+
+	}
+
+	.model-wraper .content .model-header {
+		padding: 16px;
+		font-size: 20px;
+		border-bottom: 1px solid #ddd;
+
+	}
+
+	.model-wraper .content .model-header .close {
+		float: right;
+		cursor: pointer;
+
+
+	}
+
+	.model-wraper .model-body {
+
+		display: flex;
+		flex-wrap: wrap;
+		//min-height: 196px;
+		padding: 16px;
+		padding-top: 20px;
+		//align-items: center;
+		//justify-content: center;
+		font-size: 16px;
+
+	}
+
+	.model-wraper .model-footer {
+		border-top: 1px solid #ddd;
+		padding: 16px;
+		display:flex;
+		
+		
+	}
+
+	.model-wraper .model-body .msg-title {
+
+		padding-left: 8px;
+		padding-bottom: 8px;
+
+	}
+
+	.model-wraper .model-body .msg-text {
+
+		padding-left: 24px;
+		font-size: 14px;
+		font-weight:100px;
+		
+		
+
+	}
+	.model-wraper.utilization-info-modal .ok{
+		color: #fff;
+		background: #1890ff;
+		border-color: #1890ff;
+		margin-left:auto;
+		margin-right:24px;
+		padding:4px 15px;
+		cursor:pointer;
+		border: 1px solid;
+		
+		
+
+}
+.navlist .date-li {
+	margin-right: auto;
+	margin-left: 30px;
+	margin-top:auto;
+}
+
+.navlist li:last-child {
+	margin-right: auto;
+}
+
+.active-menu{
+ border-bottom : 2px solid #3D88FC;
+}
+</style>
+
+
+<div class="main-title-wrapper">
+	<div class="logo">
+
+
+		<img width="50" height="50" style="margin-left:-10px;" src="2838da97d1ba44589feb067208244b47.png" style="border: 0;" />
+	</div>
+	<div class="title">
+		<h1>CDCS Executive Metrics Dashboard</h1>
+	</div>
+	<div class="info utilization-info-icon">
+		<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 512 512" width="30">
+			<path fill='#000'
+				d="m277.332031 128c0 11.78125-9.550781 21.332031-21.332031 21.332031s-21.332031-9.550781-21.332031-21.332031 9.550781-21.332031 21.332031-21.332031 21.332031 9.550781 21.332031 21.332031zm0 0" />
+			<path fill='#000'
+				d="m256 405.332031c-8.832031 0-16-7.167969-16-16v-165.332031h-21.332031c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h37.332031c8.832031 0 16 7.167969 16 16v181.332031c0 8.832031-7.167969 16-16 16zm0 0" />
+			<path fill='#000'
+				d="m256 512c-141.164062 0-256-114.835938-256-256s114.835938-256 256-256 256 114.835938 256 256-114.835938 256-256 256zm0-480c-123.519531 0-224 100.480469-224 224s100.480469 224 224 224 224-100.480469 224-224-100.480469-224-224-224zm0 0" />
+			<path fill='#000'
+				d="m304 405.332031h-96c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h96c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+		</svg>
+
+	</div>
+</div>
+
+<ul class='navlist'>
+<li class="date-li">
+<SpotfireControl id="146041d6398444c48a4fc6000f2aab8f" />
+</li>
+	<li class='listitem'>
+		<a class='navlink active-menu' href='#'>
+			<span>Home</span>
+
+		</a>
+	</li>
+<li class='listitem'>
+		<a class='navlink' href='#'><span>Finance</span><span><svg width="4.7" height="8"
+					viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+	<div class="dropdown-links">
+			<ul>
+				
+				<li><SpotfireControl id="4ad5b1fae14141e5891e972c0537116a" /></li>
+<li><SpotfireControl id="e8f4a504455d463e8d0d104b9ea1da16" /></li>
+<li><SpotfireControl id="073707a53c30416d9c824abd737c4e28" /></li>
+
+				
+				<ul>
+		</div>
+
+
+	</li>
+
+
+<li class='listitem'>
+		<a class='navlink' href='#'>
+			<span>Human Resource</span><span><svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"
+					class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+	<div class="dropdown-links">
+			<ul>
+				
+
+				</li>
+				<li><SpotfireControl id="fe3849243a92464498d86b397b86b199" /></li>
+<li><SpotfireControl id="d08bb9fb6cf04057832bfea4b56c1ade" /></li>
+
+				<ul>
+		</div>
+	
+	</li>
+
+
+<li class='listitem'>
+		<a class='navlink' href='#'><span>Quality and Compliance</span><span><svg width="4.7" height="8" viewBox="0 0 16 27"
+					xmlns="http://www.w3.org/2000/svg" class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+		<div class="dropdown-links">
+			<ul>
+				<li>
+				<SpotfireControl id="0419256dacf048ffaaf9772ea1e30737" />	
+				</li>
+				<li>
+				<SpotfireControl id="e72c387f41d1471a9977cd4e222a19d9" />	
+				</li>
+				<li>
+				<SpotfireControl id="78fec55850b94b77b904b54a0fd2b8da" />	
+				</li>
+				<li>
+				<SpotfireControl id="60373ef37ce1480f9aa505c60dc8ae50" />	
+				</li>
+				<li>
+				<SpotfireControl id="2a4c84be6e2a4b7a889e7f6b5012c038" />
+				</li>
+				<li><SpotfireControl id="78d62518dda24affb06dc7a15f2beee8" /></li>
+				<li><SpotfireControl id="8adc75b864344b01887c416e8a5e3f8a" /></li>
+				<li><SpotfireControl id="7a0c46fe67fa4046914ce593e4639397" /></li>
+				<li>
+				<SpotfireControl id="211aba7444a147b1b899def26756a6ec" />	
+				</li>
+				<li><SpotfireControl id="b4059fcba9e64019bda4b0f0c75dcc26" /></li>
+				<li><SpotfireControl id="ffc01a1d574b4ab5b7c094dbe24a5067" /></li>
+				
+
+				<li><SpotfireControl id="991d1021202b4e2cba9ddda6c299ba66" /></li>
+				<li><SpotfireControl id="98e285ccdbc94c58a6d5f71047bc49c3" /></li>
+				<li><SpotfireControl id="ae75207905a14bb1b61d3e483a0bfb38" /></li>
+				<li><SpotfireControl id="39186c52a1b341b2b91e54e7d60a6f44" /></li>
+				<li><SpotfireControl id="37275001ff9b43d790206dc05d3a622c" /></li>
+				
+				<ul>
+		</div>
+
+	</li>
+
+<li class='listitem'>
+		<a class='navlink' href='#'><span>Startup/Enrollment</span><span><svg width="4.7" height="8"
+					viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+	<div class="dropdown-links">
+			<ul>
+				<li>
+				<SpotfireControl id="49be8497e7a744f9bddb493df68f3e97" />	
+				</li>
+				<li>
+				<SpotfireControl id="03a658398f714807ba64ee69a326e7ce" />	
+				</li>
+				<li><SpotfireControl id="f0404904cfde4637805ec8d2a76951a8" /></li>
+				
+				<ul>
+		</div>
+
+	</li>
+
+	<li class='listitem'>
+		<a class='navlink' href='#'>
+			<span>Milestones</span><span><svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"
+					class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+		<div class="dropdown-links">
+			<ul>
+<li><SpotfireControl id="86a81fc7037046d891d2a8c1e240dd86" /></li>
+<li><SpotfireControl id="e3ddef5080b942a78a9124ef99bb2a0b" /></li>
+<li><SpotfireControl id="405b323979644663bed7229a3c9a584c" /></li>
+				
+					
+				<ul>
+		</div>
+	</li>
+	
+	
+
+	
+	
+	<li class='listitem'>
+		<a class='navlink' href='#'><span>CRA Performance</span><span><svg width="4.7" height="8" viewBox="0 0 16 27"
+					xmlns="http://www.w3.org/2000/svg" class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+<div class="dropdown-links">
+			<ul>
+				
+				<li>
+					
+				</li>
+				
+				
+				
+<li><SpotfireControl id="82b30e7a358d4c2d8efb10916281760d" /></li>
+<li><SpotfireControl id="e2283a05aa1e40ffa30239fb7266b138" /></li>
+
+<li><SpotfireControl id="14cd6544ce3942cc8c65f062a2a075be" /></li>
+<li><SpotfireControl id="9da703eb1fbd4c2da0999650befe98bc" /></li>
+<li><SpotfireControl id="ac06b9300ee24c96a33806c1e9989ea3" /></li>
+				<ul>
+		</div>
+
+
+	</li>
+
+<li class='listitem'>
+		<a class='navlink' href='#'><span>HELP</span><span><svg width="4.7" height="8" viewBox="0 0 16 27"
+					xmlns="http://www.w3.org/2000/svg" class="menu-arrow">
+					<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="_2JzwqO"></path>
+				</svg></span></a>
+<div class="dropdown-links">
+			<ul>
+				
+				<li>
+					
+				</li>
+				
+				
+				
+
+					<li><SpotfireControl id="a025c1d082b647d696d7c84c53f690bf" /></li>
+					<li><SpotfireControl id="cbe8a833698242c496643a68427cd1c9" /></li>
+					<li><SpotfireControl id="c210ea28f82d4c5191b2d165ddeefd2b" /></li>
+				<ul>
+		</div>
+
+
+	</li>
+
+</ul>
+
+<div class='model-wraper utilization-info-modal'>
+	<div class='content utilization-info-modal-content'>
+		<!-- <div class='model-header'>
+<span>Utilization</span><span class='close'>X</span>
+</div> -->
+
+		<div class='model-body'><span class='icon'><svg viewBox="64 64 896 896" focusable="false"
+					data-icon="info-circle" width="1em" height="1em" fill="#1890ff" aria-hidden="true">
+					<path
+						d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+					</path>
+					<path
+						d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z">
+					</path>
+				</svg></span>
+			<span class='Body-Message'>
+				<div class='msg-title'>CTTS Dashboard Updates</div>
+			</span><span>
+				<div class='msg-text'>"Any informative text that can be provided to the user"</div>
+			</span>
+		</div>
+		<div class='model-footer'>
+			<button class="ok">OK</button>
+		</div>
+	</div>
+
+</div>
+
+<script>
+	document.querySelector('.main-title-wrapper .info').addEventListener('click', function () {
+		console.log('clicked');
+		document.querySelector('.utilization-info-modal').classList.add("show-modal");
+	})
+
+	document.addEventListener('click', function(e) {
+		if(e.target.closest('.utilization-info-modal-content') || e.target.closest('.utilization-info-icon')) {
+			return;
+		}
+		document.querySelector('.utilization-info-modal').classList.remove("show-modal");
+	})
+
+document.querySelector('.model-wraper.utilization-info-modal .ok').addEventListener('click', function (){
+document.querySelector('.utilization-info-modal').classList.remove("show-modal");
+})
+
+</script>
